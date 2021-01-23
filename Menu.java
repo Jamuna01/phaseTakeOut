@@ -19,37 +19,17 @@ public class Menu
 				if(menu == 1)
 				{
 					displayItalianFoodMenu();
-					System.out.printf("Enter the number of trays do you want: ");
-					int trays = console.nextInt();
-					System.out.printf("How many feed per tray: ");
-					int feeds = console.nextInt();
-					System.out.printf("Cost of each tray: ");
-					double cost = console.nextDouble();
-					System.out.printf("\n********************************\n");
-					System.out.printf("You need %d trays.\n", trays);
-					determineTrays(people, feeds);
-					System.out.printf("Feed: %d\n", feeds);
-					double price = getSubtotal(cost, trays);
-					System.out.printf("Price for %d people: $%.2f\n", people, price);
-					double tax = getTax(price, 0.07);
-					System.out.printf("Tax : $%.2f\n", tax);
-					double tip = getTip(price, 0.15);
-					System.out.printf("Tip : $%.2f\n", tip);
-					double total = getGrandTotal(price, tax, tip);
-					System.out.printf("Total(food, tax, tip) : $%.2f\n", total);
-					double perPerson = pricePerPerson(total, people);
-					System.out.printf("Price per person: $%.2f\n", perPerson);
-					int leftOver = determineLeftOvers(feeds, trays, people);
-					System.out.printf("Leftover servings for the delivery person: %d\n", leftOver);
-					System.out.printf("\n********************************\n");
+					
 				}
 				else if (menu == 2)
 				{
 					displayChineseFoodMenu();
+					
 				}
 				else if (menu == 3)
 				{
 					displayAmericanFoodMenu();
+
 				}
 				else
 				{
@@ -57,13 +37,36 @@ public class Menu
 				}
 				break;
 			}
+				System.out.printf("\nEnter the number of trays do you want: ");
+				int trays = console.nextInt();
+				System.out.printf("How many feed per tray: ");
+				int feeds = console.nextInt();
+				System.out.printf("Cost of each tray: ");
+				double cost = console.nextDouble();
+				System.out.printf("\n********************************\n");
+				System.out.printf("You need %d trays.\n", trays);
+				determineTrays(people, feeds);
+				System.out.printf("Feed: %d\n", feeds);
+				double price = getSubtotal(cost, trays);
+				System.out.printf("Price for %d people: $%.2f\n", people, price);
+				double tax = getTax(price, 0.07);
+				System.out.printf("Tax : $%.2f\n", tax);
+				double tip = getTip(price, 0.15);
+				System.out.printf("Tip : $%.2f\n", tip);
+				double total = getGrandTotal(price, tax, tip);
+				System.out.printf("Total(food, tax, tip) : $%.2f\n", total);
+				double perPerson = pricePerPerson(total, people);
+				System.out.printf("Price per person: $%.2f\n", perPerson);
+				int leftOver = determineLeftOvers(feeds, trays, people);
+				System.out.printf("Leftover servings for the delivery person: %d\n", leftOver);
+				System.out.printf("\n********************************\n");
+			
 		}
 		else
 		{
 			System.out.printf("Sorry! invalid number of people!\n");
 		}
-		
-		
+
 	}
 	public static void displayMainMenu()
 	{
@@ -83,7 +86,7 @@ public class Menu
 		System.out.printf("3. Gazpacho Soup, salad and bread sticks pack - Feeds 4 - $12.99\n");
 		System.out.printf("Enter Choice\n");
 		int choice = console.nextInt();
-		/*
+		
 		if(choice == 1)
 		{
 			System.out.printf("Lasagna Tray - Feeds 5 - $17.99\n");
@@ -96,7 +99,7 @@ public class Menu
 		{
 		System.out.printf("Gazpacho Soup, salad and bread sticks pack - Feeds 4 - $12.99\n");
 		}
-		*/
+		
 		
 	}
 	public static void displayChineseFoodMenu()
@@ -107,6 +110,20 @@ public class Menu
 		System.out.printf("2. Sweet and Sour Pork Tray (includes 7 hot and sour soups, 7 egg rolls) - feeds 7 - $18.99\n");
 		System.out.printf("3. Shrimp Fried Rice Tray (includes 10 egg rolls) - Feeds 5 - $10.99\n");
 		System.out.printf("Enter Choice\n");
+		int choice = console.nextInt();
+		
+		if(choice == 1)
+		{
+			System.out.printf("Chicken and Broccoli Tray (includes 7 wonton soups, 7 egg rolls) - feeds 7 - $18.99\n");
+		}
+		else if(choice == 2)
+		{
+		System.out.printf("Sweet and Sour Pork Tray (includes 7 hot and sour soups, 7 egg rolls) - feeds 7 - $18.99\n");
+		}
+		else if(choice == 3)
+		{
+		System.out.printf("Shrimp Fried Rice Tray (includes 10 egg rolls) - Feeds 5 - $10.99\n");
+		}
 		
 	}
 	public static void displayAmericanFoodMenu()
@@ -118,6 +135,20 @@ public class Menu
 				"$22.99\n");
 		System.out.printf("3. Barbeque Tray - includes buns and peach cobbler - Feeds 10 - $26.99\n");
 		System.out.printf("Enter Choice\n");
+		int choice = console.nextInt();
+		
+		if(choice == 1)
+		{
+			System.out.printf("Hamburger and Hot Dog Tray - includes buns and condiments - feeds 8 - $21.99\n");
+		}
+		else if(choice == 2)
+		{
+		System.out.printf("Grilled Chicken Sandwich and Mozzarella Sticks Tray - includes dipping sauces -Feeds 5 -$22.99\n");
+		}
+		else if(choice == 3)
+		{
+		System.out.printf("Barbeque Tray - includes buns and peach cobbler - Feeds 10 - $26.99\n");
+		}
 	}
 	public static int determineTrays(int trays, int feeds)
 	{
